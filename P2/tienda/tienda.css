@@ -1,0 +1,58 @@
+body{
+    background-image: url('imagenes/fondo1.png');
+    font-family: Arial;
+    font-size: 120%;
+}
+
+#productos{
+    text-align:center;
+    border-width: 3px;
+    border-radius: 60px;  
+}
+
+div{
+    border: 1.5px solid black;
+    background-color: rgba(250, 235, 215, 0.634);
+    text-align:center;
+    margin:auto;
+  }
+
+a{
+    font-family: serif;
+    font-size: 130%;
+    text-align:center;
+    margin:auto;
+
+}
+
+p{
+        font-family: serif;
+        font-size: 130%;
+        text-align:center;
+        margin:auto
+}
+
+button {
+    background-color: #ea0909d2; /* Green */
+    border: none;
+    color: rgb(2, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.encabezado{
+
+    text-align:center;
+    border-width: 10px;
+    border-radius: 50px;
+    display:block;
+    margin:auto;
+}
+
+
+img{
+    border: 2.0px solid black;
+}
