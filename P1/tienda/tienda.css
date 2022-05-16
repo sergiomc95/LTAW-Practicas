@@ -32,6 +32,16 @@ p{
         margin:auto
 }
 
+button {
+    background-color: #ea0909d2; /* Green */
+    border: none;
+    color: rgb(2, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 
 .encabezado{
 
