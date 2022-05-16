@@ -1,0 +1,54 @@
+[
+    {
+        "productos": [
+            {
+                "nombre": "Spain",
+                "descripcion": "Mystery Travels España",
+                "precio": "200",
+                "stock": "5"
+            },
+            {
+                "nombre": "Europe",
+                "descripcion": "Mystery Travels Europa",
+                "precio": "500",
+                "stock": "8"
+            },
+            {
+                "nombre": "World",
+                "descripcion": "Mystery Travels Mundi",
+                "precio": "900",
+                "stock": "7"
+            }
+        ]
+    },
+    {
+        "usuarios": [
+            {
+                "nick": "root",
+                "nombre": "Usuario Maestro",
+                "email": "master-user@gmail.com"
+            },
+            {
+                "nick": "MartinSe",
+                "nombre": "Sergio Martín",
+                "email": "sermartinc95@gmail.com"
+            }
+        ]
+    },
+    {
+        "pedidos": [
+            {
+                "nick": "MartinSe",
+                "direccion": "Av Carlos V",
+                "tarjeta": "12345678",
+                "producto": "Spain"
+            },
+            {
+                "nick": "MartinSe",
+                "direccion": "Av Carlos V",
+                "tarjeta": "12345678",
+                "producto": "Europe"
+            }
+        ]
+    }
+]
