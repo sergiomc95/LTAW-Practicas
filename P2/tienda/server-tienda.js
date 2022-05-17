@@ -4,11 +4,24 @@ const url = require('url');
 const http = require('http');
 const fs = require('fs');
 
-const PUERTO = 8080;
+const PUERTO = 9090;
+
+const FICHERO_JSON = "tienda1.json"
+
+const  tienda_json = fs.readFileSync(FICHERO_JSON);
+const tienda = JSON.parse(tienda_json);
+
+//-- Recorrer el array de productos
+tienda.forEach((element, index)=>{
+  console.log("Producto: " + (index + 1) + ": " + element.nombre);
+});
 
 const server = http.createServer((req, res) => {
 
-    console.log("Petición recibida")
+    //console.log("Petición recibida")
+
+
+
 
     const url = new URL(req.url, 'http://' + req.headers['host']);
     console.log(url.pathname);
@@ -26,8 +39,13 @@ const server = http.createServer((req, res) => {
     resource_type = resource.split(".")[1];
     resource = "." + resource;
 
-    console.log("Recurso: " + resource);
-    console.log("Extensión: " + resource_type);
+    //console.log("Recurso: " + resource);
+    //console.log("Extensión: " + resource_type);
+
+
+
+
+
 
     //Lectura asíncrona
     fs.readFile(resource, function(err, data){
@@ -43,6 +61,10 @@ const server = http.createServer((req, res) => {
       //archivo css
       if (resource_type == "css"){
           mime = "text/css";
+      }
+
+      if (resource_type =='json'){
+        mime = "application/json"
       }
 
       //Fichero no encontrado
