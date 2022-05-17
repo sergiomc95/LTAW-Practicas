@@ -6,14 +6,14 @@ const fs = require('fs');
 
 const PUERTO = 9090;
 
-const FICHERO_JSON = "tienda1.json"
+const FICHERO_JSON = "tienda.json"
 
 const  tienda_json = fs.readFileSync(FICHERO_JSON);
 const tienda = JSON.parse(tienda_json);
 
 //-- Recorrer el array de productos
 tienda.forEach((element, index)=>{
-  console.log("Producto: " + (index + 1) + ": " + element.nombre);
+  console.log("Producto: " + (index + 1) + ": " + element["nombre"]);
 });
 
 const server = http.createServer((req, res) => {
