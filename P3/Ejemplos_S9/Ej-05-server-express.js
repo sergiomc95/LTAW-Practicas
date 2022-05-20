@@ -12,7 +12,7 @@ const app = express();
 const server = http.Server(app);
 
 //-- Crear el servidor de websockets, asociado al servidor http
-const wsServer = new WebSocketServer({httpServer: server});
+const wsServer = new WebSocketServer({ httpServer: server });
 
 //-- Conexión al websocket
 wsServer.on('request', (req) => {
@@ -43,7 +43,7 @@ wsServer.on('request', (req) => {
 //---- Páginas WEB con express
 
 //-- Definir el punto de entrada principal de mi aplicación web
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.send('Bienvenido a mi aplicación Web!!!' + '<p><a href="/test.html">Test</a></p>');
 });
 
