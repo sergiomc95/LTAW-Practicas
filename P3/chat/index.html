@@ -5,14 +5,32 @@
     <title>MI CHAT</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="chat-client.js"></script>
+    <link rel="stylesheet" href="index.css">
 
   </head>
   <body onload="main();">
     <p> Bienvenido al Chat</p>
 
-    <img src="imagen.jpg" alt="foto" style="width:300px;height:300px;">
+    <style>
+        body {
+          background-image: url('fondo.jpg');
+        }
+
+        #display{
+    border-style: outset;
+    border-width: 10px;
+    border-color: rgb(201, 3, 3);
+    text-align: center;
+    height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 25px;
+    color:rgb(189, 0, 0);
+    overflow: scroll;
+}
+        </style>
     <br>
-    <input id="msg" autocomplete="off" />
+    <input id="msg" type="text" placeholder="Escribe los mensajes..."autocomplete="off" />
     <button type="button" id="send">SEND</button>
     <p id="display"></p>
   

@@ -1,0 +1,17 @@
+body{
+    background-image: url(fondo.jpg);
+    text-align: center;
+}
+
+#display{
+    border-style: outset;
+    border-width: 10px;
+    border-color: rgb(84, 174, 145 );
+    text-align: center;
+    height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 25px;
+    color:black;
+    overflow: scroll;
+}

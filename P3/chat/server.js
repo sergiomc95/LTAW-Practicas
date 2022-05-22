@@ -10,14 +10,21 @@ app.get('/', function(req, res){
   console.log("Página principal: /")
 });
 
+//--Servir fichero css
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.css');
+  console.log("CSS: /")
+});
+
+
 //-- Servir el cliente javascript
 app.get('/chat-client.js', function(req, res){
   res.sendFile(__dirname + '/chat-client.js');
   console.log("Fichero js solicitado")
 });
 
-app.get('/imagen.jpg', function(req, res){
-  res.sendFile(__dirname + '/imagen.jpg');
+app.get('/fondo.jpg', function(req, res){
+  res.sendFile(__dirname + '/fondo.jpg');
   console.log("imagen solicitado")
 });
 
