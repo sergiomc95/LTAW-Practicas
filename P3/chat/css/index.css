@@ -9,6 +9,8 @@ body{
 
 #mainTitle{
     color: rgb(244, 39, 17);
+    font-size: 60px;
+    font-family: 'Amatic SC';
 }
 
 #display{

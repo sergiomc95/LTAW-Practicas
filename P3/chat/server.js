@@ -75,20 +75,20 @@ io.on('connection', function(socket){
     console.log("Mensaje nuevo recibido: " + new_msg);
     if (new_msg === '/help') {
        console.log("funciona");
-         msg = '<br>' + '/help:' + '<br>'+ 'Lista con todos los comandos soportados'
-               +'<br>' + '/list:' + '<br>'+ 'Número de usuarios conectados'
-               +'<br>' + '/hello:' + '<br>'+ 'Servidor devolverá el saludo'
-               +'<br>' + '/date:' + '<br>'+ 'Servidor devolverá la fecha'
+         msg = '<br>' + '/help:' + ' Lista con todos los comandos soportados'
+               +'<br>' + '/list:' + ' Número de usuarios conectados'
+               +'<br>' + '/hello:' + ' Servidor devolverá el saludo'
+               +'<br>' + '/date:' + ' Servidor devolverá la fecha'
+               +'<br>' + '/users:' + ' Servidor devolverá los nombres de usuarios activos' + '<br>'
          socket.emit('new_message', msg);
 
      }else if (new_msg === '/list') {
         console.log(clientesactivos.length + "numero de clientes");
-        clientes_actuales = clientesactivos.length;
-        msg = 'Usuarios conectados: ' + clientesactivos.length + '<br>' +  clientesactivos.join(', ');
+        msg = 'Usuarios conectados: ' + clientesactivos.length + '<br>';
         socket.emit('new_message', msg);
 
      } else if (new_msg === '/hello') {
-        msg = '<br>' + 'Buenas soy el servidor...'
+        msg = '<br>' + 'Buenas soy el servidor...' + '<br>'
         socket.emit('new_message', msg)
      } else if (new_msg === '/date') {
        console.log("probando fecha");
@@ -98,9 +98,14 @@ io.on('connection', function(socket){
               + '<br> Mes : ' + (fecha.getMonth() + 1)
               + '<br> Año: ' + fecha.getFullYear()
               + '<br> Hora: ' + fecha.getHours()
-              + '<br> Minutos: ' + fecha.getMinutes()
+              + '<br> Minutos: ' + fecha.getMinutes() + '<br>'
         socket.emit('new_message', msg);
-     } else{
+     } else if (new_msg === '/users') {
+      console.log(clientesactivos.length + "numero de clientes");
+      msg = 'Usuarios conectados: ' + clientesactivos.join(', ') + '<br>';
+      socket.emit('new_message', msg);
+
+    } else{
        io.emit('new_message', msg);
      }
 
