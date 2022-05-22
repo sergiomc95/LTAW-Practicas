@@ -1,0 +1,27 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-image: url(fondo.jpg);
+    text-align: center;
+}
+
+#mainTitle{
+    color: rgb(244, 39, 17);
+    font-size: 60px;
+    font-family: 'Amatic SC';
+}
+
+#display{
+    border-style: outset;
+    border-width: 10px;
+    border-color: rgb(244, 39, 17);
+    text-align: center;
+    height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 25px;
+    color:rgb(243, 6, 6);
+    overflow: scroll;
+}
