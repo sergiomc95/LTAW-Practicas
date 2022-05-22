@@ -2,7 +2,8 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var clientes = 0;
-var  nicks = [];
+var nicks = [];
+var clientesactivos = [];
 
 //--Servir la pagina principal
 app.get('/', function(req, res){
@@ -11,11 +12,10 @@ app.get('/', function(req, res){
 });
 
 //--Servir fichero css
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.css');
+app.get('/css/index.css', function(req, res){
+  res.sendFile(__dirname + '/css/index.css');
   console.log("CSS: /")
 });
-
 
 //-- Servir el cliente javascript
 app.get('/chat-client.js', function(req, res){
@@ -23,8 +23,8 @@ app.get('/chat-client.js', function(req, res){
   console.log("Fichero js solicitado")
 });
 
-app.get('/fondo.jpg', function(req, res){
-  res.sendFile(__dirname + '/fondo.jpg');
+app.get('/css/fondo.jpg', function(req, res){
+  res.sendFile(__dirname + '/css/fondo.jpg');
   console.log("imagen solicitado")
 });
 
@@ -37,25 +37,31 @@ http.listen(3000, function(){
 //-- Evento: Nueva conexion recibida
 //-- Un nuevo cliente se ha conectado!
 io.on('connection', function(socket){
-  console.log('--> Usuario conectado!');
-  clientes = clientes +1;
+  
   socket.on('persona', user => {
-    console.log(user);
+    console.log('\n--> Usuario conectado!');
+    clientes = clientes + 1;
+    console.log(user + ' se ha conectado\n');
     nicks += user + ',' + '\n';
-    io.emit('usuarios', nicks)
-    console.log( "todos los usuarios: " + nicks );
-    socket.emit('bienvenido',"bienvenido al chat " + user );
-    socket.broadcast.emit('bienvenido', "El nuevo usuario llamado " + user + " se ha unido al chat")
+    clientesactivos.push(user)
+    console.log("Usuarios conectados actualmente: " + clientesactivos.join(', ')+ '\n');
+    //-- Mensaje de bienvenida al chat del nuevo cliente
+    socket.emit('welcome', "Bienvenido al chat " + user );
+    //io.emit('welcome', "El nuevo usuario llamado " + user + " se ha unido al chat")
+    socket.broadcast.emit('welcome', "El nuevo usuario llamado " + user + " se ha unido al chat")
 
 
 
   //-- Detectar si el usuario se ha desconectado
   socket.on('disconnect', function(){
-    console.log('--> Usuario Desconectado');
+    console.log('\n--> Usuario Desconectado');
+    console.log(user + ' se ha desconectado\n');
     clientes = clientes -1;
     nicks -= user + ',' + '\n';
+    pos = clientesactivos.indexOf(user)
+    clientesactivos.splice(pos, 1)
+    console.log("Usuarios conectados actualmente: " + clientesactivos.join(', '))
     socket.broadcast.emit('Abandono', "El  usuario  " + user + "  ha abandonado el chat")
-    console.log(user);
 
   });
 });
@@ -76,8 +82,9 @@ io.on('connection', function(socket){
          socket.emit('new_message', msg);
 
      }else if (new_msg === '/list') {
-       console.log(clientes + "numero de clientes");
-        msg = 'Usuarios conectados: ' + clientes + '<br>' +  nicks
+        console.log(clientesactivos.length + "numero de clientes");
+        clientes_actuales = clientesactivos.length;
+        msg = 'Usuarios conectados: ' + clientesactivos.length + '<br>' +  clientesactivos.join(', ');
         socket.emit('new_message', msg);
 
      } else if (new_msg === '/hello') {

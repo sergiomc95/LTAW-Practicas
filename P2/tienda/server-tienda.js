@@ -45,8 +45,6 @@ const server = http.createServer((req, res) => {
 
 
 
-
-
     //Lectura asíncrona
     fs.readFile(resource, function(err, data){
 
