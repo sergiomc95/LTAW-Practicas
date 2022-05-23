@@ -31,7 +31,14 @@ const server = http.createServer((req, res) => {
     //Analizar el recurso solicitado
     if (url.pathname == '/') {
       resource += "/tienda.html";
-    } else {
+    } 
+    if (url.pathname == '/user-form') {
+      resource += "/user-form.html";
+    }
+    if (url.pathname == '/compra-form') {
+      resource += "/compra-form.html";
+    }
+    else {
       resource += url.pathname;
     }
 
@@ -39,8 +46,6 @@ const server = http.createServer((req, res) => {
     resource_type = resource.split(".")[1];
     resource = "." + resource;
 
-    //console.log("Recurso: " + resource);
-    //console.log("Extensión: " + resource_type);
 
 
 

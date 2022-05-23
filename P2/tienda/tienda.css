@@ -24,7 +24,11 @@ a{
     margin:auto;
 
 }
-
+h1{
+    text-align: center;
+    font-family: serif;
+    font-size: 200%;
+}
 p{
         font-family: serif;
         font-size: 130%;
@@ -32,8 +36,8 @@ p{
         margin:auto
 }
 
-button {
-    background-color: #ea0909d2; /* Green */
+#comprar {
+    background-color: #ffffff; 
     border: none;
     color: rgb(2, 0, 0);
     padding: 15px 32px;
@@ -42,6 +46,18 @@ button {
     display: inline-block;
     font-size: 16px;
   }
+
+
+  button {
+    background-color: #ea0909d2; 
+    color: rgb(2, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
 
 .encabezado{
 
