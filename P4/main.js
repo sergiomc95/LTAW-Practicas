@@ -16,24 +16,20 @@ var clientesactivos = [];
 //--Servir la pagina principal
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/chat.html', 'utf-8');
-  console.log("Página principal: /")
 });
 
 //--Servir fichero css
 app.get('/css/index.css', function(req, res){
   res.sendFile(__dirname + '/public/css/index.css');
-  console.log("CSS: /")
 });
 
 //-- Servir el cliente javascript
 app.get('/chat-client.js', function(req, res){
   res.sendFile(__dirname + '/public/chat-client.js');
-  console.log("Fichero js solicitado")
 });
 
 app.get('/css/fondo.jpg', function(req, res){
   res.sendFile(__dirname + '/public/css/fondo.jpg');
-  console.log("imagen solicitado")
 });
 
 //-- Lanzar el servidor
