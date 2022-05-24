@@ -1,4 +1,4 @@
-# Práctica 1  Sergio Martín Corchón
+# Práctica 1
 
 En esta práctica se pide construir un servidor web usando Node.js, el servidor tiene que proporcionar las páginas web de una tienda. Las páginas son estáticas, en formato HTML, y se componen de textos e imágenes, compartiendo una hoja de estilo. La tienda tiene 3 productos y una pagina web asociada a cada producto.
 
