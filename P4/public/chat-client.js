@@ -44,7 +44,7 @@ function main() {
     //-- en el párrafo
     socket.on('new_message', msg => {
       display.innerHTML += msg + '<br>';
-  
+      sonido.play();
     });
     
     socket.on('welcome', msg => {
