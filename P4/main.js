@@ -32,6 +32,10 @@ app.get('/css/fondo.jpg', function(req, res){
   res.sendFile(__dirname + '/public/css/fondo.jpg');
 });
 
+app.get('/iphone-notificacion.mp3', function(req, res){
+  res.sendFile(__dirname + '/iphone-notificacion.mp3');
+});
+
 //-- Lanzar el servidor
 http.listen(3000, function(){
   console.log('listening on *:3000');

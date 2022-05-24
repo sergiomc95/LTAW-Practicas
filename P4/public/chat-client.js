@@ -1,5 +1,8 @@
 function main() {
       var user = prompt("Please enter your name");
+
+    //-- Sonido de la notificacion del mensaje
+    var sonido = new Audio('iphone-notificacion.mp3');
   
     //-- Crear el websocket
     var socket = io();

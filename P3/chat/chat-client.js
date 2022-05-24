@@ -1,6 +1,7 @@
 function main() {
   var user = prompt("Please enter your name");
-
+//-- Sonido de la notificacion del mensaje
+  var sonido = new Audio('iphone-notificacion.mp3');
 //-- Crear el websocket
 var socket = io();
 
@@ -15,6 +16,8 @@ var display = document.getElementById('display')
 //-- Caja con el mensaje a enviar
 var msg = document.getElementById("msg")
 var usuarios = document.getElementById('users')
+
+
 
 msg.addEventListener("keypress", function(event) {
 // Number 13 is the "Enter" key on the keyboard
@@ -41,7 +44,7 @@ send.onclick = () => {
 //-- en el párrafo
 socket.on('new_message', msg => {
   display.innerHTML += msg + '<br>';
-
+  sonido.play();
 });
 
 socket.on('welcome', msg => {

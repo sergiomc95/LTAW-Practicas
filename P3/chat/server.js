@@ -12,7 +12,7 @@ app.get('/', function(req, res){
 
 //--Servir fichero css
 app.get('/css/index.css', function(req, res){
-  console.log("CSS: /")
+  res.sendFile(__dirname + '/css/index.css');
 });
 
 //-- Servir el cliente javascript
@@ -22,6 +22,10 @@ app.get('/chat-client.js', function(req, res){
 
 app.get('/css/fondo.jpg', function(req, res){
   res.sendFile(__dirname + '/css/fondo.jpg');
+});
+
+app.get('/iphone-notificacion.mp3', function(req, res){
+  res.sendFile(__dirname + '/iphone-notificacion.mp3');
 });
 
 //-- Lanzar el servidor
