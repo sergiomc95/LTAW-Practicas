@@ -11,7 +11,7 @@ Para devolver el recurso solicitado tendrás que acceder al sistema de ficheros,
 
  Terminal en directorio "LTAW-Practicas\P1\tienda"  y ejecutar "node server-tienda.js", Acceder a "http://localhost:8080/" en un navegador Firefox.
 
- La primera página que se visualiza es la página principal (index.html), en ella podemos ver los tres productos que hay en la tienda (tres paquetes de viajes vacacionales).
+ La primera página que se visualiza es la página principal (tienda.html), en ella podemos ver los tres productos que hay en la tienda (tres paquetes de viajes vacacionales).
 
  Haciendo click en cada uno de los productos de la tienda se redigirá a las páginas propias de los productos. En cada una de ellas encontraremos una foto descripctiva, el listado de las posibles ciudades de destino y su precio correspondiente.
 

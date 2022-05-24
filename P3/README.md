@@ -1,16 +1,28 @@
 # Práctica 3
 
-En esta práctica se pide modificar la Práctica 1 de forma que el servidor sea capaz de devolver páginas dinámicas con información "generada al vuelo". En mi caso personal la práctica tiene la misma funcionalidad que la tienda de la práctica 1, las páginas que sirve el servidor son páginas estáticas.
+En esta práctica se pide la implementación de una aplicación web de chat en el que múltiples usuarios puedan hablar entre sí a través del Navegador. La aplicación consiste en un programa servidor hecho en node.js, al que se conectan los clientes desde los navegadores. Cada vez que un usuario se conecte al servidor se le enviará un mensaje de bienvenida, que sólo él verá, y aunciará al resto de participantes que se ha conectado alguien nuevo
 
+Para el intercambio de datos entre los clientes y el servidor se utilizará la biblioteca socket.io. Además, la aplicación web se desarrollará utilizando el paquete express de Node.
+
+*El servidor se encargará de esta tarea. Además, el servidor responderá a estos comandos especiales. La respuesta sólo la verá el cliente que haya enviado el comando (El resto NO lo verán)
+
+    */help: Mostrará una lista con todos los comandos soportados
+    */list: Devolverá el número de usuarios conectados
+    */hello: El servidor nos devolverá el saludo
+    */date: Nos devolverá la fecha
 
 --------------------------------------------------------PASOS A SEGUIR PARA PROBAR LA PRACTICA---------------------------------------------------
 
- Terminal en directorio "LTAW-Practicas\P2\tienda"  y ejecutar "node server-tienda.js", Acceder a "http://localhost:9090/" en un navegador Firefox.
+ *Terminal en directorio "\LTAW-Practicas\P3\chat"  y ejecutar "node server.js", Acceder a "127.0.0.1:3000/" en un navegador Firefox.
 
- La primera página que se visualiza es la página principal (index.html), en ella podemos ver los tres productos que hay en la tienda (tres paquetes de viajes vacacionales).
+ *La página que se visualiza es la página del chat (index.html).
 
- Haciendo click en cada uno de los productos de la tienda se redigirá a las páginas propias de los productos. En cada una de ellas encontraremos una foto descripctiva, el listado de las posibles ciudades de destino y su precio correspondiente.
+ *En un primer momento se le pide al usuario que introduzca su nombre, que desde ese momento será su nick.
 
- Cada una de las páginas de los productos contiene un botón de "Comprar", que nos llevará a una página para procesar la compra(compra-form.html). Una vez en la página de procesamiento de la compra, al hacer click en "Enviar", apareceremos en una página que contiene un mensaje de confirmación de la compra del producto. 
+ *A continuación se pueden unir al chat más usuarios y poder intercambiar mensajes entre ellos.
 
-En cada una de las páginas se incluye un botón para regresar de nuevo a la página principal de la tienda.
+ *Mejoras en la práctica:
+
+    *Los usuarios tienen nick.
+    *Implementado el comando /users para ver los usuarios conectados al chat en ese momento.
+    *Cuando un usuario manda un mensaje se incluye un sonido de notificación.
