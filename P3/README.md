@@ -6,23 +6,23 @@ Para el intercambio de datos entre los clientes y el servidor se utilizará la b
 
 *El servidor se encargará de esta tarea. Además, el servidor responderá a estos comandos especiales. La respuesta sólo la verá el cliente que haya enviado el comando (El resto NO lo verán)
 
-    */help: Mostrará una lista con todos los comandos soportados
-    */list: Devolverá el número de usuarios conectados
-    */hello: El servidor nos devolverá el saludo
-    */date: Nos devolverá la fecha
+*/help: Mostrará una lista con todos los comandos soportados
+*/list: Devolverá el número de usuarios conectados
+*/hello: El servidor nos devolverá el saludo
+*/date: Nos devolverá la fecha
 
 --------------------------------------------------------PASOS A SEGUIR PARA PROBAR LA PRACTICA---------------------------------------------------
 
- *Terminal en directorio "\LTAW-Practicas\P3\chat"  y ejecutar "node server.js", Acceder a "127.0.0.1:3000/" en un navegador Firefox.
+*Terminal en directorio "\LTAW-Practicas\P3\chat"  y ejecutar "node server.js", Acceder a "127.0.0.1:3000/" en un navegador Firefox.
 
- *La página que se visualiza es la página del chat (index.html).
+*La página que se visualiza es la página del chat (index.html).
 
- *En un primer momento se le pide al usuario que introduzca su nombre, que desde ese momento será su nick.
+*En un primer momento se le pide al usuario que introduzca su nombre, que desde ese momento será su nick.
 
- *A continuación se pueden unir al chat más usuarios y poder intercambiar mensajes entre ellos.
+*A continuación se pueden unir al chat más usuarios y poder intercambiar mensajes entre ellos.
 
- *Mejoras en la práctica:
+*Mejoras en la práctica:
 
-    *Los usuarios tienen nick.
-    *Implementado el comando /users para ver los usuarios conectados al chat en ese momento.
-    *Cuando un usuario manda un mensaje se incluye un sonido de notificación.
+*Los usuarios tienen nick.
+*Implementado el comando /users para ver los usuarios conectados al chat en ese momento.
+*Cuando un usuario manda un mensaje se incluye un sonido de notificación.

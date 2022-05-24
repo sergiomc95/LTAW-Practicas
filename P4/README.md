@@ -2,13 +2,13 @@
 
 En esta práctica se pide convertir el servidor de Chat de la práctica 3 en una aplición Electron nativa. Debe tener una interfaz gráfica que muestre la siguiente información:
 
-    *Versión de node
-    *Versión de Electron
-    *Versión de Chrome
-    *URL a la que se deben conectar los clientes para chatear
-    *Mostrar los mensajes que llegan al servidor, del resto de usuarios
-    *Botón de pruebas para enviar un mensaje a todos los clientes conectados
-    *La URL a la que se conectan los clientes deberá obtener la dirección IP de la máquina en la que se está ejecutando (no valdría dejar la url "cableada" en una cadena)
+*Versión de node
+*Versión de Electron
+*Versión de Chrome
+*URL a la que se deben conectar los clientes para chatear
+*Mostrar los mensajes que llegan al servidor, del resto de usuarios
+*Botón de pruebas para enviar un mensaje a todos los clientes conectados
+*La URL a la que se conectan los clientes deberá obtener la dirección IP de la máquina en la que se está ejecutando (no valdría dejar la url "cableada" en una cadena)
 
 --------------------------------------------------------PASOS A SEGUIR PARA PROBAR LA PRACTICA---------------------------------------------------
 
